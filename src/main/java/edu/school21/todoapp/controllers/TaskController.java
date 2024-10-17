@@ -51,7 +51,7 @@ public class TaskController {
 
     @PutMapping("/tasks/{id}")
     public String updateTask(@PathVariable Long id, @RequestParam String title) {
-        Optional<Task> task = taskService.findById(id);
+        Optional<Task> task = taskService.  findById(id);
         if (task.isPresent()) {
             task.get().setTitle(title);
             taskService.save(task.orElse(null));

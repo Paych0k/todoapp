@@ -57,12 +57,22 @@ Todo Application — это многофункциональное прилож�
 
 6. Откройте браузер и перейдите по адресу [http://localhost:8080](http://localhost:8080) для работы с приложением.
 
-## Скриншоты
-![screenshot.png](materials%2Fscreenshot.png)
-![screenshot2.png](materials%2Fscreenshot2.png)
-![screenshot3.png](materials%2Fscreenshot3.png)
-![screenshot4.png](materials%2Fscreenshot4.png)
-![screenshot5.png](materials%2Fscreenshot5.png)
+## API
+
+- **GET /tasks**: Получение всех задач.
+- **GET /tasks/{id}**: Получение задачи по ID.
+- **POST /tasks**: Создание новой задачи.
+- **DELETE /tasks/{id}**: Удаление задачи по ID.
+
+
+
+## Скриншоты!
+![screenshot.png](materials/screenshot.png)
+![screenshot2.png](materials/screenshot2.png)
+![screenshot3.png](materials/screenshot3.png)
+![screenshot4.png](materials/screenshot4.png)
+![screenshot5.png](materials/screenshot5.png)
+
 
 ## Авторы
 - Данил kondratovo21088@mail.ru

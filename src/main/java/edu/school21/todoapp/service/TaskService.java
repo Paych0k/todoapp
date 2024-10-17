@@ -6,6 +6,7 @@ import edu.school21.todoapp.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TaskService {
@@ -19,15 +20,6 @@ public class TaskService {
         return taskRepository.findAll();
     }
 
-    public Task updateTask(Long id, Task task) {
-        return taskRepository.findById(id).map(existingTask -> {
-            existingTask.setTitle(task.getTitle());
-            existingTask.setInfo(task.getInfo());
-            existingTask.setDeadline(task.getDeadline());
-            return taskRepository.save(existingTask);
-        }).orElseThrow(() -> new RuntimeException("Task not found with id " + id));
-    }
-
     public List<Task> getTasksByUser(User user) {
         return taskRepository.findByUser(user);
     }
@@ -37,8 +29,8 @@ public class TaskService {
         taskRepository.save(newTask);
     }
 
-    public Task findById(Long id) {
-        return taskRepository.findById(id).orElseThrow(() -> new RuntimeException("Task not found with id " + id));
+    public Optional<Task> findById(Long id) {
+        return taskRepository.findById(id);
     }
 
     public void delete(Long id) {

@@ -33,6 +33,10 @@ public class Task {
 
 
 
+    public Long getUserId() {
+        return user != null ? user.getId() : null;
+    }
+
 
     public String getFormattedCreatedOn() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm");

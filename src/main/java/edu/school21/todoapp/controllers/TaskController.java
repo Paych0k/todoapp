@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class TaskController {
@@ -50,10 +51,10 @@ public class TaskController {
 
     @PutMapping("/tasks/{id}")
     public String updateTask(@PathVariable Long id, @RequestParam String title) {
-        Task task = taskService.findById(id);
-        if (task != null) {
-            task.setTitle(title);
-            taskService.save(task);
+        Optional<Task> task = taskService.findById(id);
+        if (task.isPresent()) {
+            task.get().setTitle(title);
+            taskService.save(task.orElse(null));
         }
         return "redirect:/todo";
     }

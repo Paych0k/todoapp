@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center">Вход</h1>
+            <form th:action="@{/login}" method="post" class="form-group">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Имя пользователя</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Пароль</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </div>
+
+                <span>У вас всё ещё нет аккаунта?
+
+                    <span><a class="d-grid gap-2" href="/register">Регистрация</a></span></span>
+
+                <div th:if="${param.error}" class="alert alert-danger mt-3" role="alert">
+                    Неправильное имя пользователя или пароль.
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

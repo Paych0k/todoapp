@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="logout-button">
+    <form th:action="@{/logout}" method="post" style="display: inline;">
+        <button type="submit" class="btn btn-danger">Выйти</button>
+    </form>
+</div>
+
+<div th:fragment="sidebar">
+    <div class="sidebar" style="width: 250px; background-color: #343a40; height: 100vh; position: fixed; top: 0; left: 0; padding: 20px; color: #fff; box-shadow: 2px 0 5px rgba(0,0,0,0.1); overflow-y: auto;">
+        <h2 style="font-size: 1.5rem; border-bottom: 1px solid #495057; padding-bottom: 10px;">Навигация</h2>
+        <ul class="nav flex-column mt-4">
+            <li class="nav-item mb-2">
+                <a class="nav-link text-light" href="/" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;">Домашняя страница</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link text-light" href="/todo" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;">Задачи</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link text-light" href="/contact" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;">Контакты</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Выход</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="logout-box">
+        <h1 class="logout-header">Выход из аккаунта</h1>
+        <p class="logout-text">Вы уверены, что хотите выйти из системы?</p>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn logout-button">Выйти</button>
+        </form>
+        <a href="/" class="btn cancel-button">Отмена</a>
+    </div>
+</div>
+</body>
+</html>
